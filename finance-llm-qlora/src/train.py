@@ -1,12 +1,13 @@
 from transformers import TrainingArguments #controls training settings
 from trl import SFTTrainer #specialized trainer for instruction tuning
 
-from dataset import load_dataset, prepare_dataset
+from datasets import load_dataset
+from dataset import prepare_dataset 
 from model import load_model, apply_lora
 from config import TRAINING_CONFIG
 
 def train():
-    dataset = load_dataset()
+    dataset = load_dataset("FinGPT/fingpt-fiqa_qa")
     dataset = prepare_dataset(dataset)
     
     model, tokenizer = load_model()

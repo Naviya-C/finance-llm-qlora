@@ -1,7 +1,3 @@
-from datasets import load_dataset
-
-dataset = load_dataset("FinGPT/fingpt-fiqa_qa")
-
 def format_entry(entry):
     sys_promt = "You are a helpful, professional financial assistant."
     
